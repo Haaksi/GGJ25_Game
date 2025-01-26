@@ -3,11 +3,12 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     public float floatSpeed;
+    public float maxHeight;
 
     private void Update()
     {
         FloatUp();
-        if (transform.position.y > 15)
+        if (transform.position.y > maxHeight)
         {
             Destroy(gameObject);
         }
@@ -15,6 +16,6 @@ public class Bubble : MonoBehaviour
 
     void FloatUp()
     {
-        transform.Translate(Vector2.up * floatSpeed * Time.deltaTime);
+        transform.Translate(floatSpeed * Time.deltaTime * Vector2.up);
     }
 }
