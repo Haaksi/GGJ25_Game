@@ -6,6 +6,7 @@ public class BoatGun : MonoBehaviour
     public GameObject ballPrefab;
     public Transform shootPoint;
     public float fireRate;
+    public float ballSpeed;
     
     private Vector3 mousePos;
     private bool canFire;
@@ -49,7 +50,7 @@ public class BoatGun : MonoBehaviour
         {
             canFire = false;
             GameObject ball = Instantiate(ballPrefab, shootPoint.position, Quaternion.Euler(0, 0, zRot + 90));
-            ball.GetComponent<Rigidbody2D>().AddForce(transform.right * 2, ForceMode2D.Impulse);
+            ball.GetComponent<Rigidbody2D>().AddForce(transform.right * ballSpeed, ForceMode2D.Impulse);
         }
     }
 }

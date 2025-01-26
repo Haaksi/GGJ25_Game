@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float lifeTime;
-    public float timer;
+    private float timer;
     private Manakeri manakeriScript;
 
     private void Start()
@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bubbles"))
         {
-            AddPoints();
+            //AddPoints();
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
@@ -37,6 +37,6 @@ public class Ball : MonoBehaviour
 
     void AddPoints()
     {
-        manakeriScript.currScore += 10;
+        //manakeriScript.currScore += 10;
     }
 }
